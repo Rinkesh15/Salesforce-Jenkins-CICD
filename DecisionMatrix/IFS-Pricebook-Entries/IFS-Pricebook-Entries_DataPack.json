@@ -1,0 +1,14 @@
+{
+    "DecisionMatrixType": "DecisionTable",
+    "Description": "ASLM 256: IFS Pricebook Entries",
+    "GroupKey": "",
+    "Name": "IFS Pricebook Entries",
+    "Namespace": "",
+    "SubGroupKey": "",
+    "Type": "",
+    "UniqueName": "IFS Pricebook Entries",
+    "UsageType": "DefaultPricing",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationMatrix",
+    "VlocityRecordSourceKey": "CalculationMatrix/IFS Pricebook Entries"
+}

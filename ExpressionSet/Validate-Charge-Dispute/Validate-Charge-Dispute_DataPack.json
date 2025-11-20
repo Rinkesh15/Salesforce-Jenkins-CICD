@@ -1,0 +1,10 @@
+{
+    "Description": "Validates charge disputes against internal business rules before submission",
+    "MigrationStatus": "Migrated",
+    "Name": "Validate Charge Dispute",
+    "Namespace": "",
+    "UniqueName": "Validate_Charge_Dispute",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationProcedure",
+    "VlocityRecordSourceKey": "CalculationProcedure/Validate Charge Dispute"
+}

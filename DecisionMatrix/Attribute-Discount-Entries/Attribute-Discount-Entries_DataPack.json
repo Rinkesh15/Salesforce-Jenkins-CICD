@@ -1,0 +1,14 @@
+{
+    "DecisionMatrixType": "DecisionTable",
+    "Description": "Attribute Based Adjustment Decision Table",
+    "GroupKey": "",
+    "Name": "Attribute Discount Entries",
+    "Namespace": "",
+    "SubGroupKey": "",
+    "Type": "",
+    "UniqueName": "Attribute Discount Entries",
+    "UsageType": "DefaultPricing",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationMatrix",
+    "VlocityRecordSourceKey": "CalculationMatrix/Attribute Discount Entries"
+}

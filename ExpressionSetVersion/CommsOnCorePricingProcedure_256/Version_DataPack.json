@@ -1,0 +1,26 @@
+{
+    "%vlocity_namespace%__GlobalKey__c": "CommsOnCorePricingProcedure_256",
+    "CalculationProcedure.Name": "CommsOnCorePricingProcedure_256",
+    "CalculationProcedureId": {
+        "Name": "CommsOnCorePricingProcedure_256",
+        "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+        "VlocityLookupRecordSourceKey": "CalculationProcedure/CommsOnCorePricingProcedure_256",
+        "VlocityRecordSObjectType": "CalculationProcedure"
+    },
+    "Constants": "",
+    "Description": "Comms on core pricing procedure for 256 release",
+    "EndDateTime": "",
+    "IsLoopingEnabled": false,
+    "LastSimulatedVariablesInput": "",
+    "LoopEnd": "",
+    "LoopIncrement": "",
+    "LoopStart": "",
+    "Name": "CommsOnCorePricingProcedure_256",
+    "Namespace": "",
+    "Rank": 1,
+    "StartDateTime": "2025-05-01T19:56:40.000Z",
+    "VersionNumber": 1,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationProcedureVersion",
+    "VlocityRecordSourceKey": "CalculationProcedureVersion/1/CalculationProcedure/CommsOnCorePricingProcedure_256"
+}

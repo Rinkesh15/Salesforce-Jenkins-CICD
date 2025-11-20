@@ -1,0 +1,14 @@
+{
+    "DecisionMatrixType": "DecisionTable",
+    "Description": "256 - Item Location Price",
+    "GroupKey": "",
+    "Name": "ItemLocationPrice",
+    "Namespace": "",
+    "SubGroupKey": "",
+    "Type": "",
+    "UniqueName": "ItemLocationPrice",
+    "UsageType": "DefaultPricing",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationMatrix",
+    "VlocityRecordSourceKey": "CalculationMatrix/ItemLocationPrice"
+}

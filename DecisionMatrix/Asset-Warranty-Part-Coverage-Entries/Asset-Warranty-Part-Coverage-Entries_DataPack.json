@@ -1,0 +1,14 @@
+{
+    "DecisionMatrixType": "DecisionTable",
+    "Description": "ASLM 256: Asset Warranty Part Coverage Entries",
+    "GroupKey": "",
+    "Name": "Asset Warranty Part Coverage Entries",
+    "Namespace": "",
+    "SubGroupKey": "",
+    "Type": "",
+    "UniqueName": "Asset Warranty Part Coverage Entries",
+    "UsageType": "DefaultPricing",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationMatrix",
+    "VlocityRecordSourceKey": "CalculationMatrix/Asset Warranty Part Coverage Entries"
+}

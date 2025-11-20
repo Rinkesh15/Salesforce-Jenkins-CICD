@@ -1,0 +1,14 @@
+{
+    "DecisionMatrixType": "DecisionTable",
+    "Description": "Tiered Adjustment Decision Table",
+    "GroupKey": "",
+    "Name": "Tiered Adjustment Entries",
+    "Namespace": "",
+    "SubGroupKey": "",
+    "Type": "",
+    "UniqueName": "Tiered Adjustment Entries",
+    "UsageType": "DefaultPricing",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationMatrix",
+    "VlocityRecordSourceKey": "CalculationMatrix/Tiered Adjustment Entries"
+}

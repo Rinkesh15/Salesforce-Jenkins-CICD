@@ -1,0 +1,8 @@
+projectPath: "D:/Autominsi Work/CICD-Demo"
+expansionPath: "vlocity"
+runtime: "Standard"
+manifest:
+  - Product2/1b1b6c6f-c1b0-1c1d-e068-4651202cb07b
+  - Product2/6e28982d-57c8-5bd3-e6db-d66c02c20e43
+  - Product2/7e0b4fa5-4290-d439-ba96-f1a1c3708b0b
+  - Product2/9a86f5d9-2e05-ef0d-3492-3479db233ef8

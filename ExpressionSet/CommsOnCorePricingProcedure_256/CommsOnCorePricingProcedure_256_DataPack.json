@@ -1,0 +1,10 @@
+{
+    "Description": "",
+    "MigrationStatus": "Migrated",
+    "Name": "CommsOnCorePricingProcedure_256",
+    "Namespace": "",
+    "UniqueName": "CommsOnCorePricingProcedure_256",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationProcedure",
+    "VlocityRecordSourceKey": "CalculationProcedure/CommsOnCorePricingProcedure_256"
+}

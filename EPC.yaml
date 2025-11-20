@@ -1,0 +1,15 @@
+version: 1
+metadata:
+  - OmniScript
+  - DataRaptor
+  - IntegrationProcedure
+  - FlexCard
+
+export:
+  path: "force-app"
+  package: "OmnistudioPackage"
+  
+deploy:
+  sourceOrg: "source_org"
+  targetOrg: "target_org"
+  deployMethod: "Metadata"

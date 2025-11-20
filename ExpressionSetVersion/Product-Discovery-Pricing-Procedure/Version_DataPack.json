@@ -1,0 +1,26 @@
+{
+    "%vlocity_namespace%__GlobalKey__c": "Product Discovery Pricing Procedure",
+    "CalculationProcedure.Name": "Product Discovery Pricing Procedure",
+    "CalculationProcedureId": {
+        "Name": "Product Discovery Pricing Procedure",
+        "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+        "VlocityLookupRecordSourceKey": "CalculationProcedure/Product Discovery Pricing Procedure",
+        "VlocityRecordSObjectType": "CalculationProcedure"
+    },
+    "Constants": "",
+    "Description": "Creates pricing procedures that get the list price of products for Product Discovery.",
+    "EndDateTime": "",
+    "IsLoopingEnabled": false,
+    "LastSimulatedVariablesInput": "",
+    "LoopEnd": "",
+    "LoopIncrement": "",
+    "LoopStart": "",
+    "Name": "Product Discovery Pricing Procedure",
+    "Namespace": "",
+    "Rank": 1,
+    "StartDateTime": "2025-03-01T14:41:15.000Z",
+    "VersionNumber": 1,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationProcedureVersion",
+    "VlocityRecordSourceKey": "CalculationProcedureVersion/1/CalculationProcedure/Product Discovery Pricing Procedure"
+}

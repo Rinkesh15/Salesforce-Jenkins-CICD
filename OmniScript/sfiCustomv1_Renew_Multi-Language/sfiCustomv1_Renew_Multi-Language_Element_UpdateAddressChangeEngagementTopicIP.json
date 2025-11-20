@@ -1,0 +1,75 @@
+{
+    "IsActive": true,
+    "IsOmniScriptEmbeddable": true,
+    "Name": "UpdateAddressChangeEngagementTopicIP",
+    "OmniProcessId": {
+        "Name": "SFIChangeAddress",
+        "VlocityDataPackType": "VlocityMatchingKeyObject",
+        "VlocityMatchingRecordSourceKey": "OmniProcess/sfiCustomv1/Renew/Multi-Language",
+        "VlocityRecordSObjectType": "OmniProcess"
+    },
+    "PropertySetConfig": {
+        "HTMLTemplateId": "",
+        "controlWidth": 12,
+        "disOnTplt": false,
+        "enableActionMessage": false,
+        "enableDefaultAbort": false,
+        "errorMessage": {
+            "custom": [
+            ],
+            "default": null
+        },
+        "extraPayload": {
+            "EngagementTopicId": "%InteractionNode:EngagementTopicId%",
+            "Outcome": "Completed",
+            "Process": "Change Personal Details"
+        },
+        "failureAbortLabel": null,
+        "failureAbortMessage": null,
+        "failureGoBackLabel": null,
+        "failureNextLabel": null,
+        "inProgressMessage": null,
+        "integrationProcedureKey": "sfi_UpdateEngagementTopic",
+        "invokeMode": "fireAndForget",
+        "label": null,
+        "message": {
+        },
+        "postMessage": null,
+        "postTransformBundle": "",
+        "preTransformBundle": "",
+        "pubsub": false,
+        "redirectNextLabel": "$standardLabel.OmniStudioRuntime.OmninextLabel",
+        "redirectNextWidth": 3,
+        "redirectPageName": "",
+        "redirectPreviousLabel": "$standardLabel.OmniStudioRuntime.OmnipreviousLabel",
+        "redirectPreviousWidth": 3,
+        "redirectTemplateUrl": "vlcAcknowledge.html",
+        "remoteOptions": {
+            "chainable": false,
+            "postTransformBundle": "",
+            "preTransformBundle": "",
+            "useFuture": false
+        },
+        "remoteTimeout": 30000,
+        "responseJSONNode": "",
+        "responseJSONPath": "",
+        "sendJSONNode": "",
+        "sendJSONPath": "",
+        "sendOnlyExtraPayload": true,
+        "show": null,
+        "showPersistentComponent": [
+            false,
+            false
+        ],
+        "ssm": false,
+        "svgIcon": "",
+        "svgSprite": "",
+        "useContinuation": false,
+        "validationRequired": "Step",
+        "wpm": false
+    },
+    "Type": "Integration Procedure Action",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcessElement",
+    "VlocityRecordSourceKey": "OmniProcessElement/OmniProcess/sfiCustomv1/Renew/Multi-Language/UpdateAddressChangeEngagementTopicIP"
+}

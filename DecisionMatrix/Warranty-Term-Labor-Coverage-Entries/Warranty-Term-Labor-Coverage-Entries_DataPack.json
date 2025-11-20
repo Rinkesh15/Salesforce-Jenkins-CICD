@@ -1,0 +1,14 @@
+{
+    "DecisionMatrixType": "DecisionTable",
+    "Description": "ASLM 256: Warranty Term Labor Coverage Entries",
+    "GroupKey": "",
+    "Name": "Warranty Term Labor Coverage Entries",
+    "Namespace": "",
+    "SubGroupKey": "",
+    "Type": "",
+    "UniqueName": "Warranty Term Labor Coverage Entries",
+    "UsageType": "DefaultPricing",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationMatrix",
+    "VlocityRecordSourceKey": "CalculationMatrix/Warranty Term Labor Coverage Entries"
+}

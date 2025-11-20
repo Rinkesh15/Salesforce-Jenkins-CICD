@@ -1,0 +1,14 @@
+{
+    "DecisionMatrixType": "DecisionTable",
+    "Description": "ASLM 256: Asset Warranty Labor Coverage Entries",
+    "GroupKey": "",
+    "Name": "Asset Warranty Labor Coverage Entries",
+    "Namespace": "",
+    "SubGroupKey": "",
+    "Type": "",
+    "UniqueName": "Asset Warranty Labor Coverage Entries",
+    "UsageType": "DefaultPricing",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationMatrix",
+    "VlocityRecordSourceKey": "CalculationMatrix/Asset Warranty Labor Coverage Entries"
+}

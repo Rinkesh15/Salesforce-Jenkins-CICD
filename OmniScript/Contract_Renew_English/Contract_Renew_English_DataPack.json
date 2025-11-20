@@ -1,0 +1,25 @@
+{
+    "Description": "Created omniscript for deploying through jenkins",
+    "ElementTypeComponentMapping": "{\"ElementTypeToHTMLTemplateList\":[]}",
+    "IsIntegProcdSignatureAvl": false,
+    "IsIntegrationProcedure": false,
+    "IsManagedUsingStdDesigner": true,
+    "IsMetadataCacheDisabled": false,
+    "IsOmniScriptEmbeddable": false,
+    "IsTestProcedure": false,
+    "IsWebCompEnabled": true,
+    "Language": "English",
+    "Name": "TestBuildTool",
+    "OmniProcessElement": [
+        "Contract_Renew_English_Element_Step1.json",
+        "Contract_Renew_English_Element_DataTable.json"
+    ],
+    "OmniProcessType": "OmniScript",
+    "PropertySetConfig": "Contract_Renew_English_PropertySetConfig.json",
+    "SubType": "Renew",
+    "Type": "Contract",
+    "UniqueName": "Contract_Renew_English_1",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "OmniProcess",
+    "VlocityRecordSourceKey": "OmniProcess/Contract/Renew/English"
+}

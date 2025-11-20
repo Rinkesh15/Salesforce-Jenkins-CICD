@@ -1,0 +1,26 @@
+{
+    "%vlocity_namespace%__GlobalKey__c": "Validate Charge Dispute",
+    "CalculationProcedure.Name": "Validate Charge Dispute",
+    "CalculationProcedureId": {
+        "Name": "Validate Charge Dispute",
+        "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+        "VlocityLookupRecordSourceKey": "CalculationProcedure/Validate Charge Dispute",
+        "VlocityRecordSObjectType": "CalculationProcedure"
+    },
+    "Constants": "",
+    "Description": "Validates charge disputes against internal business rules before submission",
+    "EndDateTime": "",
+    "IsLoopingEnabled": false,
+    "LastSimulatedVariablesInput": "",
+    "LoopEnd": "",
+    "LoopIncrement": "",
+    "LoopStart": "",
+    "Name": "Validate Charge Dispute",
+    "Namespace": "",
+    "Rank": 1,
+    "StartDateTime": "2024-05-20T11:00:21.000Z",
+    "VersionNumber": 1,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationProcedureVersion",
+    "VlocityRecordSourceKey": "CalculationProcedureVersion/1/CalculationProcedure/Validate Charge Dispute"
+}

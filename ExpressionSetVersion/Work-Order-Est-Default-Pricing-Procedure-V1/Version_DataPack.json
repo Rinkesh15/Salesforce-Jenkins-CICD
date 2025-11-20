@@ -1,0 +1,26 @@
+{
+    "%vlocity_namespace%__GlobalKey__c": "Work Order Est Default Pricing Procedure V1",
+    "CalculationProcedure.Name": "Work Order Est Default Pricing Procedure",
+    "CalculationProcedureId": {
+        "Name": "Work Order Est Default Pricing Procedure",
+        "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+        "VlocityLookupRecordSourceKey": "CalculationProcedure/Work Order Est Default Pricing Procedure",
+        "VlocityRecordSObjectType": "CalculationProcedure"
+    },
+    "Constants": "",
+    "Description": "",
+    "EndDateTime": "",
+    "IsLoopingEnabled": false,
+    "LastSimulatedVariablesInput": "",
+    "LoopEnd": "",
+    "LoopIncrement": "",
+    "LoopStart": "",
+    "Name": "Work Order Est Default Pricing Procedure V1",
+    "Namespace": "",
+    "Rank": 1,
+    "StartDateTime": "2025-05-01T07:13:09.000Z",
+    "VersionNumber": 1,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationProcedureVersion",
+    "VlocityRecordSourceKey": "CalculationProcedureVersion/1/CalculationProcedure/Work Order Est Default Pricing Procedure"
+}

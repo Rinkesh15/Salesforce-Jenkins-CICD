@@ -1,0 +1,62 @@
+Org: rinkeshrayewar702-lbqp@force.com
+Version: 1.17.20
+Node: v18.20.8
+PackageVersion: !<tag:yaml.org,2002:js/undefined> ''
+Namespace: omnistudio
+Job: VDX
+Action: Export
+ProjectPath: 'D:\Autominsi Work\CICD-Demo'
+TotalTime: 0m 18s
+Count:
+  Success:
+    DecisionMatrix: 20
+    OmniScript: 2
+    ExpressionSet: 5
+    ExpressionSetVersion: 5
+  Error: {}
+Errors:
+  - OmniScript/sfiCustomv1_Renew_Multi-Language references IntegrationProcedure/sfi_UpdateEngagementTopic which was not found.
+Status:
+  Success:
+    DecisionMatrix:
+      - Asset Action Source Entries V2
+      - Asset Warranty Labor Coverage Entries
+      - Asset Warranty Part Coverage Entries
+      - Attribute Discount Entries
+      - Bundle Based Adjustment Entries
+      - Contract Pricing  Adjustment Tiers
+      - Contract Pricing Entries
+      - Contract Pricing Volume Tiers
+      - Derived Pricing Entries
+      - IFS Pricebook Entries
+      - Index Rate
+      - ItemLocationPrice
+      - Price Book Entries V2
+      - Product Price Range Entries
+      - Product Price Range Entries V2
+      - Service Contract Coverage Entries
+      - Tiered Adjustment Entries
+      - Volume Discount Entries
+      - Warranty Term Labor Coverage Entries
+      - Warranty Term Parts Coverage Entries
+    OmniScript:
+      - Contract_Renew_English
+      - sfiCustomv1_Renew_Multi-Language
+    ExpressionSet:
+      - CommsOnCorePricingProcedure_256
+      - Product Discovery Pricing Procedure
+      - Salesforce Default Pricing Discovery Procedure
+      - Validate Charge Dispute
+      - Work Order Est Default Pricing Procedure
+    ExpressionSetVersion:
+      - CommsOnCorePricingProcedure_256
+      - Product Discovery Pricing Procedure
+      - Salesforce Default Pricing Discovery Procedure V1
+      - Validate Charge Dispute
+      - Work Order Est Default Pricing Procedure V1
+  Error: {}
+StatusCount:
+  Remaining: 0
+  Success: 37
+  Error: 1
+id: !<tag:yaml.org,2002:js/undefined> ''

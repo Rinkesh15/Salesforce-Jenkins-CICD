@@ -1,0 +1,26 @@
+{
+    "%vlocity_namespace%__GlobalKey__c": "Salesforce Default Pricing Discovery Procedure V1",
+    "CalculationProcedure.Name": "Salesforce Default Pricing Discovery Procedure",
+    "CalculationProcedureId": {
+        "Name": "Salesforce Default Pricing Discovery Procedure",
+        "VlocityDataPackType": "VlocityLookupMatchingKeyObject",
+        "VlocityLookupRecordSourceKey": "CalculationProcedure/Salesforce Default Pricing Discovery Procedure",
+        "VlocityRecordSObjectType": "CalculationProcedure"
+    },
+    "Constants": "",
+    "Description": "Salesforce Default Pricing Discovery Procedure",
+    "EndDateTime": "",
+    "IsLoopingEnabled": false,
+    "LastSimulatedVariablesInput": "",
+    "LoopEnd": "",
+    "LoopIncrement": "",
+    "LoopStart": "",
+    "Name": "Salesforce Default Pricing Discovery Procedure V1",
+    "Namespace": "",
+    "Rank": 1,
+    "StartDateTime": "2025-04-03T05:29:53.000Z",
+    "VersionNumber": 1,
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationProcedureVersion",
+    "VlocityRecordSourceKey": "CalculationProcedureVersion/1/CalculationProcedure/Salesforce Default Pricing Discovery Procedure"
+}

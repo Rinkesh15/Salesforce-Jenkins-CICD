@@ -1,0 +1,10 @@
+{
+    "Description": "",
+    "MigrationStatus": "Migrated",
+    "Name": "Salesforce Default Pricing Discovery Procedure",
+    "Namespace": "",
+    "UniqueName": "Salesforce_Default_Pricing_Discovery_Procedure",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationProcedure",
+    "VlocityRecordSourceKey": "CalculationProcedure/Salesforce Default Pricing Discovery Procedure"
+}

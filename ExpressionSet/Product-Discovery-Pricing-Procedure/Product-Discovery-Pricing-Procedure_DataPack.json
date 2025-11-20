@@ -1,0 +1,10 @@
+{
+    "Description": "",
+    "MigrationStatus": "Migrated",
+    "Name": "Product Discovery Pricing Procedure",
+    "Namespace": "",
+    "UniqueName": "Product_Discovery_Pricing_Procedure",
+    "VlocityDataPackType": "SObject",
+    "VlocityRecordSObjectType": "CalculationProcedure",
+    "VlocityRecordSourceKey": "CalculationProcedure/Product Discovery Pricing Procedure"
+}
