@@ -5,8 +5,8 @@ pipeline {
         SOURCE_ORG = "rinkeshrayewar702-lbqp@force.com"
         TARGET_ORG = "rinkeshrayewar702-tjzu@force.com"
 
-        CLIENT_ID_SOURCE = "3MVG9GBhY6wQjl2vqGlWpTteyC4HbvVQqf1DJhsDIgM.knlqlQUGNmGP1qayR4sg1TzlwdAy84YXAUZMm2dNf"
-        CLIENT_ID_TARGET = "3MVG9GBhY6wQjl2uu8JnhHsUEFpJYO3m7O9Zb4KG6Y8W.3G9dvxGNN0ppMbNrRW2OYVx2rWampchkPPxYLgnY"
+        CLIENT_ID_SOURCE = "3MVG9GBhY6wQjl2vqGlWpTteyC9nzqWwv1DExsh8VyKBy3OVWRfoFGHpoJL34y9WYPuuXdeNnvZ_5OFPg6VQ3"
+        CLIENT_ID_TARGET = "3MVG9GBhY6wQjl2uu8JnhHsUEFh6Lnwl7uFXrPK8OF2GrgAvuKb_Eh3nBHsopJKpqylIvf4GWmbXBZWngBUOR"
     }
 
     stages {
