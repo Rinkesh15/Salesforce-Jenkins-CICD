@@ -71,7 +71,9 @@ pipeline {
 
         /*------------------------------------
          COMMIT + PUSH TO GIT
-        -------------------------------------*/stage('Commit Changes to Git') {
+        -------------------------------------*/
+        
+        stage('Commit Changes to Git') {
     steps {
         bat '''
             git config --global user.email "jenkins@cicd.com"
