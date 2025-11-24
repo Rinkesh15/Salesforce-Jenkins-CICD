@@ -27,17 +27,17 @@ pipeline {
          CHECKOUT PROJECT
         -------------------------------------*/
         stage('Checkout Source Code') {
-            steps {
-                checkout([$class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/Rinkesh15/Salesforce-Jenkins-CICD.git',
-                        credentialsId: env.GIT_CRED_ID
-                    ]]
-                ])
-            }
-        }
-
+    steps {
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: '*/jenkins-dev']],
+            userRemoteConfigs: [[
+                url: 'https://github.com/Rinkesh15/Salesforce-Jenkins-CICD.git',
+                credentialsId: 'github_token'
+            ]]
+        ])
+    }
+}
 
         /*------------------------------------
          AUTHENTICATE SOURCE ORG (JWT)
