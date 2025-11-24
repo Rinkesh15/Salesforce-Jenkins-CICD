@@ -1,0 +1,10 @@
+{
+  "projectPath": "./vlocity",
+  "expansionPath": "./vlocity",
+  "defaultOrg": "SourceOrg",
+  "manifest": {
+    "VlocityUITemplate": [],
+    "VlocityCard": [],
+    "DataRaptor": []
+  }
+}
