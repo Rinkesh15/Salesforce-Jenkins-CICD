@@ -27,19 +27,16 @@ pipeline {
          CHECKOUT PROJECT
         -------------------------------------*/
         stage('Checkout Source Code') {
-    steps {
-        checkout([$class: 'GitSCM',
-            branches: [[name: '*/main']],
-            userRemoteConfigs: [[
-                url: 'https://github.com/Rinkesh15/Salesforce-Jenkins-CICD.git',
-                credentialsId: env.GIT_CRED_ID
-            ]]
-        ])
-
-        // 👇 This line forces Jenkins onto the real main branch
-        bat 'git checkout main'
-    }
-}
+            steps {
+                checkout([$class: 'GitSCM',
+                    branches: [[name: '*/main']],
+                    userRemoteConfigs: [[
+                        url: 'https://github.com/Rinkesh15/Salesforce-Jenkins-CICD.git',
+                        credentialsId: env.GIT_CRED_ID
+                    ]]
+                ])
+            }
+        }
 
 
         /*------------------------------------
