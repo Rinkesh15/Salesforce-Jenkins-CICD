@@ -73,40 +73,39 @@ pipeline {
          COMMIT + PUSH TO GIT
         -------------------------------------*/
         
-        stage('Commit Changes to Git') {
+       stage('Commit Changes to Git') {
     steps {
-        bat '''
-            git config --global user.email "jenkins@cicd.com"
-            git config --global user.name "Jenkins CI Bot"
-        '''
-
         bat 'git status --porcelain > changes.txt'
 
         script {
-            if (readFile('changes.txt').trim()) {
+            def changes = readFile('changes.txt').trim()
+            if (changes) {
+                echo "Changes detected → committing..."
 
-                withCredentials([
-                    usernamePassword(
-                        credentialsId: 'github_token',
-                        usernameVariable: 'GIT_USERNAME',
-                        passwordVariable: 'GIT_PASSWORD'
-                    )
-                ]) {
-                    bat '''
-                        git add .
-                        git commit -m "Automated DataPack Export from Jenkins"
+                withCredentials([usernamePassword(
+                    credentialsId: 'github_token',
+                    usernameVariable: 'GIT_USERNAME',
+                    passwordVariable: 'GIT_PASSWORD'
+                )]) {
+                    bat """
+                        git config --global user.email "jenkins@cicd.com"
+                        git config --global user.name "Jenkins CI Bot"
+                        git config --global --add safe.directory "*"
 
                         git remote set-url origin https://%GIT_USERNAME%:%GIT_PASSWORD%@github.com/Rinkesh15/Salesforce-Jenkins-CICD.git
 
-                        git push origin HEAD:jenkins-dev --force
-                    '''
+                        git add .
+                        git commit -m "Automated DataPack Export from Jenkins" || echo "No changes to commit"
+                        git push origin jenkins-dev
+                    """
                 }
             } else {
-                echo "No datapack changes → skipping commit."
+                echo "No changes detected → skipping commit."
             }
         }
     }
 }
+
 
 
         /*------------------------------------
