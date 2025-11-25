@@ -18,4 +18,10 @@ public class CICDJenkins {
         System.debug('HelloWorld.sayHello -> ' + msg);
         return msg;
     }
+    @AuraEnabled
+	 public static String sayHellothree() {
+        String msg = 'Hello';
+        System.debug('HelloWorld.sayHello -> ' + msg);
+        return msg;
+    }
 }
