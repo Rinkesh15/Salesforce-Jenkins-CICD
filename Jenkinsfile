@@ -16,6 +16,9 @@ pipeline {
 
     stages {
 
+        /*----------------------------------
+          ONLY ONE CHECKOUT (IMPORTANT)
+        ----------------------------------*/
         stage('Checkout Code') {
             steps {
                 checkout([$class: 'GitSCM',
@@ -28,6 +31,9 @@ pipeline {
             }
         }
 
+        /*----------------------------------
+          AUTH SOURCE ORG
+        ----------------------------------*/
         stage('Auth Source Org') {
             steps {
                 withCredentials([file(credentialsId: env.JWT_CRED_ID, variable: 'JWT_FILE')]) {
@@ -41,16 +47,20 @@ pipeline {
             }
         }
 
+        /*----------------------------------
+          EXPORT
+        ----------------------------------*/
         stage('Export OmniStudio Data') {
             steps {
                 bat """
-                    vlocity packExport ^
-                    -sfdx.username "${SOURCE_USERNAME}" ^
-                    -job "${JOB_FILE}"
+                    vlocity packExport -sfdx.username "${SOURCE_USERNAME}" -job "${JOB_FILE}"
                 """
             }
         }
 
+        /*----------------------------------
+          COMMIT + PUSH
+        ----------------------------------*/
         stage('Commit & Push Changes') {
             steps {
                 bat '''
@@ -78,6 +88,9 @@ pipeline {
             }
         }
 
+        /*----------------------------------
+          AUTH TARGET ORG
+        ----------------------------------*/
         stage('Auth Target Org') {
             steps {
                 withCredentials([file(credentialsId: env.JWT_CRED_ID, variable: 'JWT_FILE')]) {
@@ -91,6 +104,9 @@ pipeline {
             }
         }
 
+        /*----------------------------------
+          DEPLOY
+        ----------------------------------*/
         stage('Deploy CICDJenkins.cls') {
             steps {
                 bat """
@@ -103,54 +119,8 @@ pipeline {
         }
     }
 
-    /*═══════════════════════════════════════
-      EMAIL NOTIFICATIONS (SUCCESS + FAILURE)
-      Requires: "Email Extension Plugin"
-    ═══════════════════════════════════════*/
     post {
-
-        success {
-            emailext(
-                subject: "✔ SUCCESS — Jenkins Salesforce Deployment",
-                body: """
-Good news!
-
-Your Jenkins pipeline **completed successfully**.
-
-• Job: ${env.JOB_NAME}
-• Build: #${env.BUILD_NUMBER}
-• Status: SUCCESS
-• Branch: jenkins-dev
-
-View Console Logs:
-${env.BUILD_URL}console
-
-Regards,
-Jenkins CI Bot
-                """,
-                to: "rinkeshrayewar702@gmail.com"
-            )
-        }
-
-        failure {
-            emailext(
-                subject: "❌ FAILED — Jenkins Salesforce Deployment",
-                body: """
-Your Jenkins deployment has **FAILED**.
-
-• Job: ${env.JOB_NAME}
-• Build: #${env.BUILD_NUMBER}
-• Status: FAILURE
-• Branch: jenkins-dev
-
-Please review the logs:
-${env.BUILD_URL}console
-
-Regards,
-Jenkins CI Bot
-                """,
-                to: "rinkeshrayewar702@gmail.com"
-            )
-        }
+        success { echo "SUCCESS" }
+        failure { echo "FAILED" }
     }
 }
