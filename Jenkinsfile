@@ -2,15 +2,13 @@ pipeline {
     agent any
 
     environment {
-        // Credentials
+
         JWT_CRED_ID = 'a65c05f4-dc7c-43d8-8eb3-fb0af623694b'
         GIT_CRED_ID = 'github_token'
 
-        // Salesforce Orgs
         SOURCE_USERNAME = 'rinkeshrayewar702-lbqp@force.com'
         TARGET_USERNAME = 'rinkeshrayewar702-tjzu@force.com'
 
-        // Connected App Keys
         SOURCE_CLIENT_ID = '3MVG9GBhY6wQjl2vqGlWpTteyC4HbvVQqf1DJhsDIgM.knlqlQUGNmGP1qayR4sg1TzlwdAy84YXAUZMm2dNf'
         TARGET_CLIENT_ID = '3MVG9GBhY6wQjl2uu8JnhHsUEFpJYO3m7O9Zb4KG6Y8W.3G9dvxGNN0ppMbNrRW2OYVx2rWampchkPPxYLgnY'
 
@@ -19,30 +17,29 @@ pipeline {
 
     stages {
 
-        /*------------------------------------------------
-         1️⃣ ONLY ONE CHECKOUT — jenkins-dev BRANCH
-        ------------------------------------------------*/
+        /*----------------------------------
+          CHECKOUT FROM jenkins-dev BRANCH
+        ----------------------------------*/
         stage('Checkout Code') {
             steps {
                 checkout([
                     $class: 'GitSCM',
                     branches: [[name: 'jenkins-dev']],
-                    doGenerateSubmoduleConfigurations: false,
-                    extensions: [[$class: 'LocalBranch']],  // IMPORTANT
+                    extensions: [[$class: 'LocalBranch']],   // ensures branch exists locally
                     userRemoteConfigs: [[
                         url: 'https://github.com/Rinkesh15/Salesforce-Jenkins-CICD.git',
-                        credentialsId: GIT_CRED_ID
+                        credentialsId: env.GIT_CRED_ID
                     ]]
                 ])
             }
         }
 
-        /*------------------------------------------------
-         2️⃣ AUTH SOURCE ORG
-        ------------------------------------------------*/
+        /*----------------------------------
+          AUTH SOURCE ORG
+        ----------------------------------*/
         stage('Auth Source Org') {
             steps {
-                withCredentials([file(credentialsId: JWT_CRED_ID, variable: 'JWT_FILE')]) {
+                withCredentials([file(credentialsId: env.JWT_CRED_ID, variable: 'JWT_FILE')]) {
                     bat """
                         sf org login jwt ^
                         --username "${SOURCE_USERNAME}" ^
@@ -53,9 +50,9 @@ pipeline {
             }
         }
 
-        /*------------------------------------------------
-         3️⃣ EXPORT
-        ------------------------------------------------*/
+        /*----------------------------------
+          EXPORT
+        ----------------------------------*/
         stage('Export OmniStudio Data') {
             steps {
                 bat """
@@ -66,42 +63,12 @@ pipeline {
             }
         }
 
-        /*------------------------------------------------
-         4️⃣ COMMIT + PUSH
-        ------------------------------------------------*/
-        stage('Commit & Push Changes') {
-            steps {
-                bat '''
-                    git config --global user.email "jenkins@cicd.com"
-                    git config --global user.name "Jenkins CI Bot"
-                '''
-
-                bat 'git status --porcelain > changes.txt'
-
-                script {
-                    def changes = readFile('changes.txt').trim()
-
-                    if (changes) {
-                        echo "Changes detected → committing..."
-
-                        bat '''
-                            git add .
-                            git commit -m "Automated Export from Jenkins"
-                            git push origin jenkins-dev
-                        '''
-                    } else {
-                        echo "No changes found → skipping commit."
-                    }
-                }
-            }
-        }
-
-        /*------------------------------------------------
-         5️⃣ AUTHENTICATE TARGET ORG
-        ------------------------------------------------*/
+        /*----------------------------------
+          AUTH TARGET ORG
+        ----------------------------------*/
         stage('Auth Target Org') {
             steps {
-                withCredentials([file(credentialsId: JWT_CRED_ID, variable: 'JWT_FILE')]) {
+                withCredentials([file(credentialsId: env.JWT_CRED_ID, variable: 'JWT_FILE')]) {
                     bat """
                         sf org login jwt ^
                         --username "${TARGET_USERNAME}" ^
@@ -112,9 +79,9 @@ pipeline {
             }
         }
 
-        /*------------------------------------------------
-         6️⃣ DEPLOY ONLY ONE APEX CLASS
-        ------------------------------------------------*/
+        /*----------------------------------
+          DEPLOY ONLY ONE APEX CLASS
+        ----------------------------------*/
         stage('Deploy CICDJenkins.cls') {
             steps {
                 bat """
@@ -128,7 +95,7 @@ pipeline {
     }
 
     post {
-        success { echo "SUCCESS — Deployment completed!" }
-        failure { echo "FAILED — Check Jenkins logs" }
+        success { echo "✅ SUCCESS — Deployment Completed!" }
+        failure { echo "❌ FAILED — Check Logs" }
     }
 }
