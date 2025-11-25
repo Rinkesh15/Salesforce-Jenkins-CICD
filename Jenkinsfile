@@ -20,16 +20,19 @@ pipeline {
           ONLY ONE CHECKOUT (IMPORTANT)
         ----------------------------------*/
         stage('Checkout Code') {
-            steps {
-                checkout([$class: 'GitSCM',
-                    branches: [[name: '*/jenkins-dev']],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/Rinkesh15/Salesforce-Jenkins-CICD.git',
-                        credentialsId: env.GIT_CRED_ID
-                    ]]
-                ])
-            }
-        }
+    steps {
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: 'jenkins-dev']],
+            doGenerateSubmoduleConfigurations: false,
+            extensions: [[$class: 'LocalBranch']],   // IMPORTANT: creates real local branch
+            userRemoteConfigs: [[
+                url: 'https://github.com/Rinkesh15/Salesforce-Jenkins-CICD.git',
+                credentialsId: 'github_token'
+            ]]
+        ])
+    }
+}
 
         /*----------------------------------
           AUTH SOURCE ORG
