@@ -27,16 +27,17 @@ pipeline {
          CHECKOUT PROJECT
         -------------------------------------*/
         stage('Checkout Source Code') {
-            steps {
-                checkout([$class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/Rinkesh15/Salesforce-Jenkins-CICD.git',
-                        credentialsId: env.GIT_CRED_ID
-                    ]]
-                ])
-            }
-        }
+    steps {
+        checkout([
+            $class: 'GitSCM',
+            branches: [[name: '*/jenkins-dev']],
+            userRemoteConfigs: [[
+                url: 'https://github.com/Rinkesh15/Salesforce-Jenkins-CICD.git',
+                credentialsId: 'github_token'
+            ]]
+        ])
+    }
+}
 
 
         /*------------------------------------
@@ -73,33 +74,40 @@ pipeline {
          COMMIT + PUSH TO GIT
         -------------------------------------*/
         stage('Commit Changes to Git') {
-            steps {
+    steps {
+        bat '''
+            git config --global user.email "jenkins@cicd.com"
+            git config --global user.name "Jenkins CI Bot"
+        '''
 
-                // FIX 1: Set Git identity (critical)
-                bat '''
-                    git config --global user.email "jenkins@cicd.com"
-                    git config --global user.name "Jenkins CI Bot"
-                '''
+        bat 'git status --porcelain > changes.txt'
 
-                bat 'git status --porcelain > changes.txt'
+        script {
+            if (readFile('changes.txt').trim()) {
 
-                script {
-                    def changes = readFile('changes.txt').trim()
+                withCredentials([
+                    usernamePassword(
+                        credentialsId: 'github_token',
+                        usernameVariable: 'GIT_USERNAME',
+                        passwordVariable: 'GIT_PASSWORD'
+                    )
+                ]) {
+                    bat '''
+                        git add .
+                        git commit -m "Automated DataPack Export from Jenkins"
 
-                    if (changes) {
-                        echo "Changes detected → committing..."
+                        git remote set-url origin https://%GIT_USERNAME%:%GIT_PASSWORD%@github.com/Rinkesh15/Salesforce-Jenkins-CICD.git
 
-                        bat '''
-                            git add .
-                            git commit -m "Automated DataPack Export from Jenkins"
-                            git push origin main
-                        '''
-                    } else {
-                        echo "No changes found → skipping Git commit."
-                    }
+                        git push origin HEAD:jenkins-dev --force
+                    '''
                 }
+            } else {
+                echo "No datapack changes → skipping commit."
             }
         }
+    }
+}
+
 
         /*------------------------------------
          AUTHENTICATE TARGET ORG
